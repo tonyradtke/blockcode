@@ -1,6 +1,6 @@
 <h2> Introduction </h2>
 
-  - This is designed to be a lightweight template to facilitate parallel processing of iterator based containers
+  - This is designed to be a lightweight C++ template to facilitate parallel processing of iterator based containers
 
   <br>
 
@@ -74,7 +74,7 @@
   <li> Include partitioner in your project </li>
     <ul>
       <li> include_directories(${YOUR_INCLUDE_DIR})  </li>
-      <li> #include <Partitioner.hh> </li>
+      <li> #include \<Partitioner.hh\> </li>
     </ul> 
   </li>
   <br>
