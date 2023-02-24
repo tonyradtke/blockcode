@@ -4,14 +4,19 @@
 #include <set>
 #include <iostream>
 
-class setPart : public Partitioner<std::set<std::string>> {
+void handle_element(std::string s) {
+  std::cout << s;
+}
+
+class setPartitioner : public Partitioner<std::set<std::string>> {
 public: 
 
-  setPart(std::set<std::string>& data, int numParts) 
+  setPartitioner(std::set<std::string>& data, int numParts) 
     : Partitioner(data, numParts) {}
 
   void handle_partition(std::set<std::string>::const_iterator f_begin, std::set<std::string>::const_iterator f_end) {
     for (auto it = f_begin; it != f_end; ++it) { 
+      handle_element(*it);
     }
   }
 
@@ -26,9 +31,9 @@ int main() {
     s.insert(std::to_string(i));
   }
 
-  setPart vp(s, 5);
+  setPartitioner parter(s, 5);
 
-  vp.execute();
+  parter.execute();
 
 
 }
