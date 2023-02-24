@@ -46,11 +46,6 @@
 
   ```
 
-<h2> Dependencies </h2>
-
-  - [cppzmq](https://github.com/zeromq/cppzmq)
-
-
 <h2> Building </h2>
 
 <ol>
