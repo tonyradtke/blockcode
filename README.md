@@ -13,24 +13,26 @@
 
   - Here we create a simple child class.
   
-  '''c++
-    class setPartitioner : public Partitioner<std::set<std::string>> {
-      public: 
+  '''cpp
 
-      setPartitioner(std::set<std::string>& data, int numParts) 
-        : Partitioner(data, numParts) {}
+  class setPartitioner : public Partitioner<std::set<std::string>> {
+    public: 
 
-      void handle_partition(std::set<std::string>::const_iterator f_begin, std::set<std::string>::const_iterator f_end) {
-        for (auto it = f_begin; it != f_end; ++it) { 
-          handle_element(*it)
-        }   
-      }
-    };
+    setPartitioner(std::set<std::string>& data, int numParts) 
+      : Partitioner(data, numParts) {}
+
+   void handle_partition(std::set<std::string>::const_iterator f_begin, std::set<std::string>::const_iterator f_end) {
+     for (auto it = f_begin; it != f_end; ++it) { 
+       handle_element(*it)
+     }  
+   }
+ };
  '''
 
   - Which can then be ran like : 
 
-  '''
+  '''cpp
+
     std::set<std::string> s;
 
     for (int i = 0; i < 100; ++i) {
