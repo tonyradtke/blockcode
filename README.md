@@ -15,18 +15,18 @@
   
   '''
 
-  class setPartitioner : public Partitioner<std::set<std::string>> {
-    public: 
+    class setPartitioner : public Partitioner<std::set<std::string>> {
+      public: 
 
-    setPartitioner(std::set<std::string>& data, int numParts) 
-      : Partitioner(data, numParts) {}
+      setPartitioner(std::set<std::string>& data, int numParts) 
+        : Partitioner(data, numParts) {}
 
-   void handle_partition(std::set<std::string>::const_iterator f_begin, std::set<std::string>::const_iterator f_end) {
-     for (auto it = f_begin; it != f_end; ++it) { 
-       handle_element(*it)
-     }  
-   }
- };
+     void handle_partition(std::set<std::string>::const_iterator f_begin, std::set<std::string>::const_iterator f_end) {
+       for (auto it = f_begin; it != f_end; ++it) { 
+         handle_element(*it)
+       }  
+     }
+   };
  '''
 
   - Which can then be ran like : 
