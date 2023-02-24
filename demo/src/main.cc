@@ -1,4 +1,4 @@
-#include "Partitioner.hh"
+#include <Partitioner.hh>
 
 #include <string>
 #include <set>
@@ -29,7 +29,6 @@ int main() {
   setPart vp(s, 5);
 
   vp.execute();
-
 
 
 }
