@@ -13,7 +13,7 @@
 
   - Here we create a simple child class.
   
-  '''
+  ```cpp
 
     class setPartitioner : public Partitioner<std::set<std::string>> {
       public: 
@@ -27,11 +27,12 @@
        }  
      }
    };
- '''
+
+ ```
 
   - Which can then be ran like : 
 
-  '''
+  ```cpp
 
     std::set<std::string> s;
 
@@ -42,7 +43,8 @@
     setPartitioner parter(s, 5); 
 
     parter.execute();
-  ''' 
+
+  ```
 
 <h2> Dependencies </h2>
 
