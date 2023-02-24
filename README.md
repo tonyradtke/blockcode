@@ -13,7 +13,7 @@
 
   - Here we create a simple child class.
   
-  '''cpp
+  '''
 
   class setPartitioner : public Partitioner<std::set<std::string>> {
     public: 
@@ -31,7 +31,7 @@
 
   - Which can then be ran like : 
 
-  '''cpp
+  '''
 
     std::set<std::string> s;
 
