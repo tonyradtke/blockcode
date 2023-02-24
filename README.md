@@ -74,7 +74,7 @@
   <li> Include partitioner in your project </li>
     <ul>
       <li> include_directories(${YOUR_INCLUDE_DIR})  </li>
-      <li> #include \<Partitioner.hh\> </li>
+      <li> include Partitioner.hh in your project </li>
     </ul> 
   </li>
   <br>
