@@ -52,17 +52,10 @@
 <h2> Building </h2>
 
 <ol>
-  <li> Download and build Dependencies <
+ <li> Download, Build and Install partitioner with CMake 
     <ul>
-      <li> download cppzmq : https://github.com/zeromq/cppzmq </li>
-      <li> follow the build instructions </li>
-    </ul>
-  </li>
-  <br>
-  <li> Download, Build and Install simple-zmq-server with CMake 
-    <ul>
-      <li> git clone https://github.com/tonyradtke/simple-zmq-server.git </li>
-      <li> cd simple-zmq-server </li>
+      <li> git clone https://github.com/tonyradtke/partitioner.git </li>
+      <li> cd partitioner </li>
       <li> mkdir build </li>
       <li> cd build </li>
       <li> cmake .. </li>
@@ -81,12 +74,10 @@
     </ul>
   </li>
   <br>
-  <li> Include and Link against simple-zmq-server and cppzmq in your project </li>
+  <li> Include partitioner in your project </li>
     <ul>
-      <li> find_library("simple-zmq-server" STATIC lib) </li>
-      <li> find_package(cppzmq) </li>
-      <li> target_link_libraries(${YOUR_BINARY} PUBLIC "simple-zmq-server") </li>
-      <li> target_link_libraries(${YOUR_BINARY} PUBLIC cppzmq) </li>
+      <li> include_directories(${YOUR_INCLUDE_DIR})  </li>
+      <li> #include <Partitioner.hh> </li>
     </ul> 
   </li>
   <br>
