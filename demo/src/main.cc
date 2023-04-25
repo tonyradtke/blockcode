@@ -1,40 +1,31 @@
-#include <Partitioner.hh>
+#include <BlockCode.hh>
+#include <FileUtil.hh>
 
 #include <string>
 #include <set>
 #include <iostream>
-
-void handle_element(std::string s) {
-  std::cout << s;
-}
-
-class setPartitioner : public Partitioner<std::set<std::string>> {
-public: 
-
-  setPartitioner(std::set<std::string>& data, int numParts) 
-    : Partitioner(data, numParts) {}
-
-  void handle_partition(std::set<std::string>::const_iterator f_begin, std::set<std::string>::const_iterator f_end) {
-    for (auto it = f_begin; it != f_end; ++it) { 
-      handle_element(*it);
-    }
-  }
-
-};
-
+#include <cstdlib>
 
 int main() {
+  
+  BlockCode bcode;
+  
+  const std::string sourceFilePath {"../../data/foo.txt"};
+  const std::string destFilePath {"../../data/bar.txt"};
+  const std::string diskFilePath {"../../data/disk.bin"};
 
-  std::set<std::string> s;
+  //binary is in demo/build/bin
+  //data is in   demo/data/
+  bcode.encode(sourceFilePath, diskFilePath);
+  
+  //now we mess with our disk...
+  FileUtil::murphy(diskFilePath);
 
-  for (int i = 0; i < 100; ++i) {
-    s.insert(std::to_string(i));
-  }
+  bcode.decode(diskFilePath, destFilePath);
 
-  setPartitioner parter(s, 5);
-
-  parter.execute();
-
+  const std::string cmd {"diff " + sourceFilePath + " " + destFilePath};
+  std::cout << "now we bash diff the source and dest files...\n";
+  system(cmd.c_str());
 
 }
 

@@ -11,14 +11,16 @@ project(demo)
 # set vars
 #
 SET(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
-SET(LIB_NAME "partitioner")
+SET(LIB_NAME "errcorr")
 SET(DEMO_BINARY "__demo__")
 SET(INCLUDE_DIR "/usr/local/include")
+
+find_library(${LIB_NAME} STATIC lib)
 
 #
 #  wrangle files
 #
-include_directories("include/")
+#include_directories("include/")
 include_directories(${INCLUDE_DIR})
 
 file(GLOB EXE_SOURCES "src/*.cc")
@@ -27,6 +29,8 @@ file(GLOB EXE_SOURCES "src/*.cc")
 # link
 #
 add_executable(${DEMO_BINARY} ${EXE_SOURCES})
+
+target_link_libraries(${DEMO_BINARY} PUBLIC ${LIB_NAME})
 
 
 
