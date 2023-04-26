@@ -44,9 +44,10 @@ static void murphy(std::string filename) {
       int p = rand() % 1000 + 1;
 
       if (p > 500) {
-        //std::cout << " block " << counter << " changed from : " << bs << "\n";
+        std::cout << " block " << counter << " changed from : " << bs << "\n";
         bs.flip(i);
-        //std::cout << "         "          << "                " << bs << "\n";
+        if (counter >= 100) std::cout << " ";
+        std::cout << "         "          << "                " << bs << "\n";
         byte = static_cast<char>(bs.to_ulong());
         break; //can only change one bit per block..
       }   

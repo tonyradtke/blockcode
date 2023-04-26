@@ -61,9 +61,10 @@
     </ul>
   </li>
   <br>
-  <li> Include partitioner in your project </li>
+  <li> Include and Link against this in your project </li>
     <ul>
-      <li> include_directories(${YOUR_INCLUDE_DIR})  </li>
+      <li> find_library("errcorr" STATIC lib)  </li>
+      <li> target_link_libraries(${YOUR_BINARY} PUBLIC "errcorr")  </li>
       <li> include BlockCode.hh and FileUtil.hh in your project </li>
     </ul> 
   </li>
