@@ -55,9 +55,10 @@
       <li> cd demo </li>
       <li> mkdir build </li>
       <li> cd build </li>
-      <li> cmake . </li>
+      <li> cmake .. </li>
       <li> make </li>
-      <li> ./bin/__demo__ </li>
+      <li> cd bin/ </li>
+      <li> ./__demo__ </li>
     </ul>
   </li>
   <br>
